@@ -173,13 +173,17 @@ function mostrarPropiedades(propiedades, contenedorId) {
 }
 
 // Mostrar propiedades de venta y alquiler al cargar la página
-mostrarPropiedades(
-  propiedades_venta.slice(0, 3),
-  "propiedades-contenedor-venta",
-);
-mostrarPropiedades(
-  propiedades_alquiler.slice(0, 3),
-  "propiedades-contenedor-alquiler",
-);
-mostrarPropiedades(propiedades_venta, "propiedades-pagina-venta");
-mostrarPropiedades(propiedades_alquiler, "propiedades-pagina-alquiler");
+
+const cargarSiExiste = (arrayDatos, idContenedor, cantidad = null) => {
+  const contenedor = document.getElementById(idContenedor);
+  if (contenedor) {
+    mostrarPropiedades(
+      cantidad ? arrayDatos.slice(0, cantidad) : arrayDatos,
+      idContenedor,
+    );
+  }
+};
+cargarSiExiste(propiedades_venta, "propiedades-contenedor-venta", 3);
+cargarSiExiste(propiedades_alquiler, "propiedades-contenedor-alquiler", 3);
+cargarSiExiste(propiedades_venta, "propiedades-pagina-venta");
+cargarSiExiste(propiedades_alquiler, "propiedades-pagina-alquiler");
