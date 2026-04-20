@@ -172,7 +172,7 @@ function mostrarPropiedades(propiedades, contenedorId) {
   });
 }
 
-// Mostrar propiedades de venta y alquiler al cargar la página
+// Mostrar propiedades de venta y alquiler al cargar la página, SI existen los contenedores.
 
 const cargarSiExiste = (arrayDatos, idContenedor, cantidad = null) => {
   const contenedor = document.getElementById(idContenedor);
