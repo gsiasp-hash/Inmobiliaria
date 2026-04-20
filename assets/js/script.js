@@ -173,8 +173,13 @@ function mostrarPropiedades(propiedades, contenedorId) {
 }
 
 // Mostrar propiedades de venta y alquiler al cargar la página
-mostrarPropiedades(propiedades_venta.slice(0, 3), "propiedades-contenedor");
+mostrarPropiedades(
+  propiedades_venta.slice(0, 3),
+  "propiedades-contenedor-venta",
+);
 mostrarPropiedades(
   propiedades_alquiler.slice(0, 3),
   "propiedades-contenedor-alquiler",
 );
+mostrarPropiedades(propiedades_venta, "propiedades-pagina-venta");
+mostrarPropiedades(propiedades_alquiler, "propiedades-pagina-alquiler");
